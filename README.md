@@ -4,7 +4,7 @@ A comprehensive collection of machine learning algorithms implemented from scrat
 
 ## 🚀 Project Overview
 
-This repository contains pure Python implementations of various machine learning algorithms. Each implementation includes detailed documentation, mathematical explanations, and example usage to help understand the underlying concepts.
+This repository contains pure Python implementations of various machine learning algorithms. Each implementation includes detailed documentation and mathematical explanations to help understand the underlying concepts.
 
 ## 📂 Repository Structure
 ```
@@ -17,10 +17,10 @@ ML-Algorithms-Implementation/
 │   ├── knn.py
 │   ├── poly_class.py
 │   └── poly_class_min_max_e1.py
-├── unsupervised_learning/
-│   └── [future implementations]
-└── utils/
-    └── [utility functions]
+├── unsupervised/
+    ├── LDA/
+    ├── PCA/
+    └── clustering.py
 ```
 
 ## 🎯 Implemented Algorithms
@@ -32,12 +32,10 @@ ML-Algorithms-Implementation/
 - Gradient Boosting: An ensemble learning method
 - Polynomial Regression: Implementation with regularization options
 
-### Coming Soon
-- Logistic Regression
-- Support Vector Machines (SVM)
-- Random Forest
-- Neural Networks
-- Naive Bayes
+### Unsupervised Learning
+- Linear Discriminant Analysis (LDA): Dimensionality reduction and classification
+- Principal Component Analysis (PCA): Dimensionality reduction technique
+- Clustering: Implementation of clustering algorithms
 
 ## 🛠️ Dependencies
 - Python 3.x
@@ -46,32 +44,61 @@ ML-Algorithms-Implementation/
 - Matplotlib
 - Scikit-learn (for dataset generation and comparison)
 
-## 💻 Usage Example
+## 💻 Usage Examples
+
+### Linear Regression
 ```python
-# Example using Linear Regression
 from supervised_learning.linear_regression import LinearRegression
 
-# Create and train the model
+# Initialize the model
 model = LinearRegression()
+
+# Train the model
 model.fit(X_train, y_train)
 
 # Make predictions
 predictions = model.predict(X_test)
 ```
 
-## 🧪 Testing
-Each algorithm includes its own test suite to verify:
-- Correctness of implementation
-- Performance on standard datasets
-- Comparison with scikit-learn implementations
+### PCA
+```python
+from unsupervised.PCA.pca import PCA
+
+# Initialize PCA with number of components
+pca = PCA(n_components=2)
+
+# Fit and transform the data
+transformed_data = pca.fit_transform(X)
+
+# Get explained variance ratio
+variance_ratio = pca.explained_variance_ratio_
+```
+
+### LDA
+```python
+from unsupervised.LDA.lda import LDA
+
+# Initialize LDA
+lda = LDA(n_components=2)
+
+# Fit and transform the data
+transformed_data = lda.fit_transform(X, y)
+```
+
+### Clustering
+```python
+from unsupervised.clustering import KMeans
+
+# Initialize KMeans
+kmeans = KMeans(n_clusters=3)
+
+# Fit the model and get cluster assignments
+clusters = kmeans.fit_predict(X)
+```
 
 ## 📘 Documentation
 Each algorithm implementation includes:
 - Theoretical background
 - Mathematical formulation
-- Usage examples
 - Performance characteristics
-
-## 🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
 
