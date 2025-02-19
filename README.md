@@ -18,9 +18,11 @@ ML-Algorithms-Implementation/
 │   ├── poly_class.py
 │   └── poly_class_min_max_e1.py
 ├── unsupervised/
-    ├── LDA/
-    ├── PCA/
-    └── clustering.py
+│   ├── LDA/
+│   ├── PCA/
+│   └── clustering.py
+└── utils/
+    └── [utility functions]
 ```
 
 ## 🎯 Implemented Algorithms
@@ -96,9 +98,17 @@ kmeans = KMeans(n_clusters=3)
 clusters = kmeans.fit_predict(X)
 ```
 
+## 🧪 Testing
+Each algorithm includes verification against standard datasets and comparison with scikit-learn implementations where applicable.
+
 ## 📘 Documentation
 Each algorithm implementation includes:
 - Theoretical background
 - Mathematical formulation
 - Performance characteristics
 
+## 🤝 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📝 License
+This project is licensed under the MIT License - see the LICENSE file for details.
